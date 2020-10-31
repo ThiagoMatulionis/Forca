@@ -10,7 +10,7 @@ public class Forca
         {
             try
             {
-                System.out.println("Hello World!!!");
+                System.out.println("Salve Thiaguera !!!");
                 /*
                 Palavra palavra =
                 BancoDePalavras.getPalavraSorteada();
