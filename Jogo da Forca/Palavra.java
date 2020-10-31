@@ -8,7 +8,7 @@ public class Palavra implements Comparable<Palavra>
         // ou seja, sem nenhum caractere, lan�ando exce��o.
         // armazena o texto recebido em this.texto.
 
-        if (texto == null || texto == "")
+        if (texto == null || texto.equals(""))
             throw new Exception ("Palavra inválida !");
 
         this.texto = texto;
@@ -21,7 +21,7 @@ public class Palavra implements Comparable<Palavra>
 
         int qtd = 0;
 
-        for (int i = 0; i < texto.lenght()){
+        for (int i = 0; i < texto.length();i++){
 
             if(texto.charAt(i) == letra)
                 qtd++;
@@ -41,6 +41,27 @@ public class Palavra implements Comparable<Palavra>
         // e assim por diante.
         // lan�ar excecao caso nao encontre em this.texto
         // a I�zima apari��o da letra fornecida.
+
+        int pos = 0 ;
+        int vez =-1;
+
+        for (int j=0; j < this.texto.length();j++)
+        {
+            if (this.texto.charAt(j) == letra) {
+                vez++;
+
+                if (vez == i)
+                {
+                    pos = j;
+                    break;
+                }
+            }
+        }
+
+        if (vez == -1)
+            throw new Exception("Não há essa letra na palavra");
+
+        return pos;
     }
 
     public int getTamanho ()
@@ -57,11 +78,29 @@ public class Palavra implements Comparable<Palavra>
     {
         // verificar se this e obj possuem o mesmo conte�do, retornando
         // true no caso afirmativo ou false no caso negativo
+
+        if (this == obj) return true;
+
+        if(obj == null) return false;
+
+        if(obj.getClass() != Palavra.class) return false;
+
+        Palavra plv = (Palavra) obj;
+
+        if (plv.texto != this.texto) return false;
+
+        return true;
+
     }
 
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        int ret = 255;
+
+        ret = 13 * ret + this.texto.hashCode();
+
+        return ret;
     }
 
     public int compareTo (Palavra palavra)
