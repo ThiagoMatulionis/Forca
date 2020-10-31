@@ -4,15 +4,30 @@ public class Palavra implements Comparable<Palavra>
 
     public Palavra (String texto) throws Exception
     {
-		// verifica se o texto recebido é nulo ou então vazio,
-		// ou seja, sem nenhum caractere, lançando exceção.
-		// armazena o texto recebido em this.texto.
+        // verifica se o texto recebido ï¿½ nulo ou entï¿½o vazio,
+        // ou seja, sem nenhum caractere, lanï¿½ando exceï¿½ï¿½o.
+        // armazena o texto recebido em this.texto.
+
+        if (texto == null || texto == "")
+            throw new Exception ("Palavra invÃ¡lida !");
+
+        this.texto = texto;
     }
 
     public int getQuantidade (char letra)
     {
         // percorre o String this.texto, conta e retorna
         // quantas letras existem nele iguais a letra fornecida
+
+        int qtd = 0;
+
+        for (int i = 0; i < texto.lenght()){
+
+            if(texto.charAt(i) == letra)
+                qtd++;
+        }
+
+        return qtd;
     }
 
     public int getPosicaoDaIezimaOcorrencia (int i, char letra) throws Exception
@@ -24,8 +39,8 @@ public class Palavra implements Comparable<Palavra>
         // se i==2, retorna a posicao em que ocorre a terceira
         // aparicao de letra fornecida em this.texto;
         // e assim por diante.
-        // lançar excecao caso nao encontre em this.texto
-        // a Iézima aparição da letra fornecida.
+        // lanï¿½ar excecao caso nao encontre em this.texto
+        // a Iï¿½zima apariï¿½ï¿½o da letra fornecida.
     }
 
     public int getTamanho ()
@@ -40,7 +55,7 @@ public class Palavra implements Comparable<Palavra>
 
     public boolean equals (Object obj)
     {
-        // verificar se this e obj possuem o mesmo conteúdo, retornando
+        // verificar se this e obj possuem o mesmo conteï¿½do, retornando
         // true no caso afirmativo ou false no caso negativo
     }
 
