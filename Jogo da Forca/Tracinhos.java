@@ -99,7 +99,7 @@ public class Tracinhos implements Cloneable
     {
         int ret = 30;
 
-        ret *= 7 + this.hashCode();
+        ret *= 7 + this.texto.hashCode();
 
         return ret;
         // calcular e retornar o hashcode de this
