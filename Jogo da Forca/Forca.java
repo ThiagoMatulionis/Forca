@@ -10,8 +10,6 @@ public class Forca
         {
             try
             {
-                System.out.println("Hello World!!!");
-                /*
                 Palavra palavra =
                 BancoDePalavras.getPalavraSorteada();
                 Tracinhos tracinhos =
@@ -80,8 +78,6 @@ public class Forca
                         System.err.println ("Opcao invalida! Tente novamente...");
                     }
                 }
-
-                 */
             }
             catch (Exception erro)
             {
