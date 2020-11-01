@@ -67,7 +67,9 @@ public class ControladorDeErros implements Cloneable
     {
         int ret = 25;
 
-        ret *= 7 + this.hashCode();
+        ret *= 7 + Integer.valueOf(this.qtdErr).hashCode();
+        ret *= 7 + Integer.valueOf(this.qtdMax).hashCode();
+
 
         return ret;
         // calcular e retornar o hashcode de this
@@ -82,7 +84,14 @@ public class ControladorDeErros implements Cloneable
 
     public Object clone ()
     {
-        return this.clone();
+        ControladorDeErros ret = null;
+
+        try {
+            ret = new ControladorDeErros(this);
+        }
+        catch (Exception ignored) { }
+
+        return ret;
         // returnar uma cópia de this
     }
 }

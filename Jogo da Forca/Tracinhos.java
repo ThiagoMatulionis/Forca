@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Tracinhos implements Cloneable
 {
     private char texto [];
@@ -59,10 +61,10 @@ public class Tracinhos implements Cloneable
 
     public String toString ()
     {
-        String palavra = null;
+        String palavra = ""+this.texto[0];
 
 
-        for(int i=0;i < this.texto.length; i++)
+        for(int i=1;i < this.texto.length; i++)
         {
             palavra += " " + this.texto[i];
         }
@@ -99,7 +101,7 @@ public class Tracinhos implements Cloneable
     {
         int ret = 30;
 
-        ret *= 7 + this.texto.hashCode();
+        ret *= 7 + Arrays.hashCode(this.texto);
 
         return ret;
         // calcular e retornar o hashcode de this
@@ -119,8 +121,14 @@ public class Tracinhos implements Cloneable
 
     public Object clone ()
     {
+        Tracinhos ret = null;
 
-        return this.clone();
+        try {
+            ret = new Tracinhos(this);
+        }
+        catch (Exception ignored) { }
+
+        return ret;
 
 
         // retornar uma copia de this
