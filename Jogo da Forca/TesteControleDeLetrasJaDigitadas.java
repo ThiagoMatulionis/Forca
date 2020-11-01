@@ -11,14 +11,14 @@ public class TesteControleDeLetrasJaDigitadas {
             teste.registre('C');
             teste.registre('D');
             teste.registre('E');
-        //    System.out.println(teste);// C,D,E
+            System.out.println(teste);// C,D,E
 
-          //  teste.registre('C'); //Lança Excessão pois a letra já foi digitada
+            teste.registre('C'); //Lança Excessão pois a letra já foi digitada
 
             /*Teste método isJaDigitada*/
             teste2.registre('D');
             teste2.registre('F');
-            //System.out.println(teste2.isJaDigitada('D')); //true foi a letra já foi digitada
+            System.out.println(teste2.isJaDigitada('D')); //true foi a letra já foi digitada
         }
         catch (Exception e){
            System.err.println( e.getMessage() );
