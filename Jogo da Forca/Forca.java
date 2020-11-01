@@ -79,6 +79,7 @@ public class Forca
                         System.err.println ("Opcao invalida! Tente novamente...");
                     }
                 }
+
             }
             catch (Exception erro)
             {
