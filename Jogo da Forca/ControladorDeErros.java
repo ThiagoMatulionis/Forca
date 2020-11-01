@@ -65,6 +65,8 @@ public class ControladorDeErros implements Cloneable
         ret *= 7 + Integer.valueOf(this.qtdErr).hashCode();
         ret *= 7 + Integer.valueOf(this.qtdMax).hashCode();
 
+        if(ret < 0)
+            ret = -ret;
 
         return ret;
         // calcular e retornar o hashcode de this

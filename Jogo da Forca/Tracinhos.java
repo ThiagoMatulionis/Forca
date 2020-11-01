@@ -101,7 +101,11 @@ public class Tracinhos implements Cloneable
     {
         int ret = 30;
 
-        ret *= 7 + Arrays.hashCode(this.texto);
+        for (int i=0; i<this.texto.length; i++)
+            ret = 7*ret + Integer.valueOf(this.texto[i]).hashCode();
+
+        if (ret < 0)
+            ret = -ret;
 
         return ret;
         // calcular e retornar o hashcode de this
@@ -109,6 +113,9 @@ public class Tracinhos implements Cloneable
 
     public Tracinhos (Tracinhos t) throws Exception // construtor de cópia
     {
+        if(t == null)
+            throw new Exception("Parâmetro nulo");
+
         this.texto = new char[t.texto.length];
 
         for(int i = 0; i < t.texto.length; i++)
