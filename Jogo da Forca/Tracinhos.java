@@ -102,7 +102,7 @@ public class Tracinhos implements Cloneable
         int ret = 30;
 
         for (int i=0; i<this.texto.length; i++)
-            ret = 7*ret + Integer.valueOf(this.texto[i]).hashCode();
+            ret = 7*ret + Character.valueOf(this.texto[i]).hashCode();
 
         if (ret < 0)
             ret = -ret;
