@@ -29,12 +29,7 @@ public class ControladorDeErros implements Cloneable
 
     public boolean isAtingidoMaximoDeErros  ()
     {
-        if(this.qtdErr == this.qtdMax)
-        {
-            return true;
-        }
-        else
-            return false;
+        return this.qtdErr == this.qtdMax;
         // returna true se this.qtdErr for igual a this.qtdMax,
         // ou então false, caso contrario.
     }
@@ -77,6 +72,8 @@ public class ControladorDeErros implements Cloneable
 
     public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de cópia
     {
+        if (c == null)
+            throw new Exception("Parâmetro nulo");
         this.qtdMax = c.qtdMax;
         this.qtdErr = c.qtdErr;
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr
