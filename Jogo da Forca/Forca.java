@@ -10,6 +10,7 @@ public class Forca
         {
             try
             {
+
                 Palavra palavra =
                 BancoDePalavras.getPalavraSorteada();
                 Tracinhos tracinhos =
