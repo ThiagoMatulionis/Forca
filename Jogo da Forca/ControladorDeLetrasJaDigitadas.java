@@ -5,6 +5,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public ControladorDeLetrasJaDigitadas ()
     {
         // torna this.letrasJaDigitadas igual ao String vazio
+        this.letrasJaDigitadas = "";
     }
 
     public boolean isJaDigitada (char letra)
@@ -12,41 +13,92 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         // percorrer o String this.letrasJaDigitadas e verificar se ele
         // possui a letra fornecida, retornando true em caso afirmativo
         // ou false em caso negativo
+
+        for (int i=0; i < letrasJaDigitadas.length();i++)
+        {
+            if (letrasJaDigitadas.charAt(i) == letra)
+                return true;
+        }
+
+        return false;
     }
 
     public void registre (char letra) throws Exception
     {
 		// verifica se a letra fornecida ja foi digitada (pode usar
-		// o método this.isJaDigitada, para isso), lancando uma exceção
+		// o mï¿½todo this.isJaDigitada, para isso), lancando uma exceï¿½ï¿½o
 		// em caso afirmativo.
 		// concatena a letra fornecida a this.letrasJaDigitadas.
+        if (isJaDigitada(letra))
+            throw new Exception("Letra jÃ¡ digitada");
+
+        this.letrasJaDigitadas += letra;
     }
 
     public String toString ()
     {
 		// retorna um String com TODAS as letras presentes em
-		// this.letrasJaDigitadas separadas por vírgula (,).
+		// this.letrasJaDigitadas separadas por vï¿½rgula (,).
+       String ret ;
+
+       ret = "" + letrasJaDigitadas.charAt(0);
+
+       for (int i=1; i< this.letrasJaDigitadas.length();i++)
+           ret += "," + letrasJaDigitadas.charAt(i) ;
+
+        return ret ;
     }
 
     public boolean equals (Object obj)
     {
-        // verificar se this e obj são iguais
+        // verificar se this e obj sï¿½o iguais
+
+        if(this == obj) return true;
+
+        if (obj == null) return false;
+
+        if (obj.getClass() != ControladorDeLetrasJaDigitadas.class) return false;
+
+        ControladorDeLetrasJaDigitadas ctrl = (ControladorDeLetrasJaDigitadas) obj;
+
+        if (ctrl.letrasJaDigitadas != this.letrasJaDigitadas) return false;
+
+        return true;
     }
 
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+
+        int ret = 589;
+
+        ret = 13* ret + letrasJaDigitadas.hashCode();
+
+        return ret;
     }
 
-    public ControladorDeLetrasJaDigitadas(
-    ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas)
-    throws Exception // construtor de cópia
+    public ControladorDeLetrasJaDigitadas ( ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas)
+    throws Exception // construtor de cï¿½pia
     {
         // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
+
+        if (controladorDeLetrasJaDigitadas == null)
+            throw new Exception("Modelo InvÃ¡lido");
+
+        this.letrasJaDigitadas = controladorDeLetrasJaDigitadas.letrasJaDigitadas;
     }
 
     public Object clone ()
     {
-        // criar uma cópia do this com o construtor de cópia e retornar
+        // criar uma cï¿½pia do this com o construtor de cï¿½pia e retornar
+        ControladorDeLetrasJaDigitadas ret = null;
+
+        try {
+            ret = new ControladorDeLetrasJaDigitadas(this);
+            }
+
+        catch (Exception erro){}
+
+        return ret;
     }
 }
