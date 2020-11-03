@@ -7,25 +7,25 @@ public class TesteControleDeLetrasJaDigitadas {
         ControladorDeLetrasJaDigitadas teste2 = new ControladorDeLetrasJaDigitadas();
 
         try {
-            /*Teste do mÈtodo registre e toString*/
+            /*Teste do m√©todo registre e toString*/
             teste.registre('C');
             teste.registre('D');
             teste.registre('E');
             System.out.println(teste);// C,D,E
 
-            teste.registre('C'); //LanÁa Excess„o pois a letra j· foi digitada
+            teste.registre('C'); //Lan√ßa Excess√£o pois a letra j√° foi digitada
 
-            /*Teste mÈtodo isJaDigitada*/
+            /*Teste m√©todo isJaDigitada*/
             teste2.registre('D');
             teste2.registre('F');
-            System.out.println(teste2.isJaDigitada('D')); //true foi a letra j· foi digitada
+            System.out.println(teste2.isJaDigitada('D')); //true foi a letra j√° foi digitada
         }
         catch (Exception e){
            System.err.println( e.getMessage() );
         }
 
         try {
-            /*Teste Construtor de cÛpias e clone()*/
+            /*Teste Construtor de c√≥pias e clone()*/
             ControladorDeLetrasJaDigitadas c1 = new ControladorDeLetrasJaDigitadas();
             c1.registre('T');
             c1.registre('E');
