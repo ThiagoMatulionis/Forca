@@ -39,14 +39,16 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     {
 		// retorna um String com TODAS as letras presentes em
 		// this.letrasJaDigitadas separadas por v�rgula (,).
-       String ret ;
+       String ret ="" ;
 
-       ret = "" + letrasJaDigitadas.charAt(0);
+       if (letrasJaDigitadas != "") {
+           ret = "" + letrasJaDigitadas.charAt(0);
 
-       for (int i=1; i< this.letrasJaDigitadas.length();i++)
-           ret += "," + letrasJaDigitadas.charAt(i) ;
+           for (int i = 1; i < this.letrasJaDigitadas.length(); i++)
+               ret += "," + letrasJaDigitadas.charAt(i);
+       }
 
-        return ret ;
+        return ret;
     }
 
     public boolean equals (Object obj)
