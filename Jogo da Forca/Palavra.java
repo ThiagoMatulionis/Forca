@@ -19,6 +19,7 @@ public class Palavra implements Comparable<Palavra>
         // percorre o String this.texto, conta e retorna
         // quantas letras existem nele iguais a letra fornecida
 
+
         int qtd = 0;
 
         for (int i = 0; i < texto.length();i++){
@@ -28,6 +29,7 @@ public class Palavra implements Comparable<Palavra>
         }
 
         return qtd;
+
     }
 
     public int getPosicaoDaIezimaOcorrencia (int i, char letra) throws Exception
@@ -39,6 +41,7 @@ public class Palavra implements Comparable<Palavra>
         // se i==2, retorna a posicao em que ocorre a terceira
         // aparicao de letra fornecida em this.texto;
         // e assim por diante.
+
         // lan�ar excecao caso nao encontre em this.texto
         // a I�zima apari��o da letra fornecida.
 
@@ -62,6 +65,7 @@ public class Palavra implements Comparable<Palavra>
             throw new Exception("Não há essa letra na palavra");
 
         return pos;
+
     }
 
     public int getTamanho ()
@@ -79,6 +83,7 @@ public class Palavra implements Comparable<Palavra>
         // verificar se this e obj possuem o mesmo conte�do, retornando
         // true no caso afirmativo ou false no caso negativo
 
+
         if (this == obj) return true;
 
         if(obj == null) return false;
@@ -91,16 +96,19 @@ public class Palavra implements Comparable<Palavra>
 
         return true;
 
+
     }
 
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+
         int ret = 255;
 
         ret = 13 * ret + this.texto.hashCode();
 
         return ret;
+
     }
 
     public int compareTo (Palavra palavra)
