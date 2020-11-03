@@ -26,7 +26,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public void registre (char letra) throws Exception
     {
 		// verifica se a letra fornecida ja foi digitada (pode usar
-		// o m�todo this.isJaDigitada, para isso), lancando uma exce��o
+		// o método this.isJaDigitada, para isso), lancando uma exce��o
 		// em caso afirmativo.
 		// concatena a letra fornecida a this.letrasJaDigitadas.
         if (isJaDigitada(letra))
