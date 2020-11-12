@@ -33,7 +33,7 @@ public class ControladorDeErros implements Cloneable
     {
         return this.qtdErr == this.qtdMax;
         // returna true se this.qtdErr for igual a this.qtdMax,
-        // ou então false, caso contrario.
+        // ou então false, caso contrário.
     }
 
     public String toString ()
