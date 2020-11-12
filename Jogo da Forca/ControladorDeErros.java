@@ -19,7 +19,7 @@ public class ControladorDeErros implements Cloneable
 
         if(isAtingidoMaximoDeErros())
         {
-            throw new Exception("Erros máximos atingido");
+            throw new Exception("Máximo de erros atingido");
         }
 
         this.qtdErr++;

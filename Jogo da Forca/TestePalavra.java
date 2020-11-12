@@ -11,8 +11,11 @@ public class TestePalavra
 
             //Teste getPosicaoDaIezimaOcorrencia
             Palavra teste2 = new Palavra("ARARA");
-            System.out.println(teste2.getPosicaoDaIezimaOcorrencia(1,'A')); // Retorna a posição 2
-            System.out.println(teste2.getPosicaoDaIezimaOcorrencia(0,'E')); // Lança exceção pois a letra não existe na palavra
+            System.out.println(teste2.getPosicaoDaIezimaOcorrencia(1,'A'));
+            // Retorna a posição 2
+
+            //System.out.println(teste2.getPosicaoDaIezimaOcorrencia(0,'E'));
+            // Lança exceção pois a letra não existe na palavra
 
             Palavra teste3 =   new Palavra("IGUAL");
             Palavra teste4 =   new Palavra("IGUAL");

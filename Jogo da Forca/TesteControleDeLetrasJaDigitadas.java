@@ -25,7 +25,7 @@ public class TesteControleDeLetrasJaDigitadas {
             //equals
             System.out.println(teste.equals(teste2)); // true , os objetos são iguais
 
-            System.out.println(teste2.isJaDigitada('D')); //true , a letra já foi digitada !
+            System.out.println(teste2.isJaDigitada('D')); //true , a letra já foi registrada!
            }
         catch (Exception e)
         {
