@@ -50,7 +50,8 @@ public class Palavra implements Comparable<Palavra>
 
         for (int j=0; j < this.texto.length();j++)
         {
-            if (this.texto.charAt(j) == letra) {
+            if (this.texto.charAt(j) == letra)
+            {
                 vez++;
 
                 if (vez == i)

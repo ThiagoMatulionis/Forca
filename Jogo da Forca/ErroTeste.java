@@ -4,15 +4,13 @@ public class ErroTeste {
         try
         {
             ControladorDeErros a = new ControladorDeErros(5);
-            System.out.println(a);
+            System.out.println("Erros: "+a);
             a.registreUmErro();
-            System.out.println(a);
-            System.out.println(a.isAtingidoMaximoDeErros());
-            a.registreUmErro();
-            a.registreUmErro();
-            a.registreUmErro();
-            a.registreUmErro();
-            System.out.println(a +"\n" + a.isAtingidoMaximoDeErros()+"\n");
+            System.out.println("Erros: "+a);
+            System.out.println("Erros maximos atingidos: "+a.isAtingidoMaximoDeErros());
+            while(!a.isAtingidoMaximoDeErros())
+                a.registreUmErro();
+            System.out.println("Erros: "+a +"\nErros maximos atingidos: " + a.isAtingidoMaximoDeErros()+"\n");
 
 
             ControladorDeErros b = new ControladorDeErros(5);
@@ -26,13 +24,14 @@ public class ErroTeste {
             b.registreUmErro();
             System.out.println(b +"\n" + b.isAtingidoMaximoDeErros());
 
-            System.out.println("\n"+ a.equals(b));
+            System.out.println("\na equals b: "+ a.equals(b));
 
             ControladorDeErros c = (ControladorDeErros) a.clone();
-            System.out.println("\n"+c);
+            System.out.println("\nc: "+c);
 
-            System.out.println("\n"+a.hashCode());
-            System.out.println(c.hashCode());
+            System.out.println("\n"+    a.hashCode());
+            System.out.println(         b.hashCode());
+            System.out.println(         c.hashCode());
 
         }
         catch(Exception e)
