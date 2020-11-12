@@ -3,30 +3,37 @@ public class TracinhoTeste {
     {
         try
         {
-            Tracinhos a = new Tracinhos(2);
-            System.out.println(a);
+            Tracinhos a = new Tracinhos(4);
+            System.out.println("a: "+a);
             a.revele(0,'P');
-            System.out.println(a);
-            a.revele(1,'O');
+            a.revele(1,'A');
+            System.out.println(a.isAindaComTracinhos());
+            a.revele(2,'R');
+            a.revele(3,'E');
             System.out.println("a: "+a);
             System.out.println(a.isAindaComTracinhos());
-            
-            Tracinhos b = new Tracinhos(2);
-            System.out.println(b);
-            b.revele(0,'P');
-            System.out.println(b);
-            b.revele(1,'O');
-            System.out.println("b: "+b);
-            System.out.println(b.isAindaComTracinhos());
-            
-            
-            System.out.println(a.equals(b));
-            
-            Tracinhos c = (Tracinhos) a.clone();
-            System.out.println("c: "+c);
 
-            System.out.println(a.hashCode());
-            System.out.println(c.hashCode());
+            System.out.println(); // Linha vazia
+
+            Tracinhos b = new Tracinhos(4);
+            System.out.println("b: "+b);
+            b.revele(0,'P');
+            b.revele(1,'A');
+            b.revele(2,'R');
+            b.revele(3,'E');
+            System.out.println("b: "+b);
+
+            System.out.println(); // Linha vazia
+            
+            
+            System.out.println("a equals b: "+a.equals(b)+"\n");
+
+            Tracinhos c = (Tracinhos) a.clone();
+            System.out.println("c: "+c+"\n");
+
+            System.out.println("a.hashCode: "+a.hashCode());
+            System.out.println("b.hashCode: "+b.hashCode());
+            System.out.println("c.hashCode: "+c.hashCode());
 
 
             

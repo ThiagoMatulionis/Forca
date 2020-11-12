@@ -5,7 +5,7 @@ public class ControladorDeErros implements Cloneable
     public ControladorDeErros (int qtdMax) throws Exception
     {
 
-        if(qtdMax < 0)
+        if(qtdMax < 1)
             throw new Exception("Quantidade máxima inválida");
 
         this.qtdMax = qtdMax;
@@ -75,7 +75,7 @@ public class ControladorDeErros implements Cloneable
         // calcular e retornar o hashcode de this
     }
 
-    public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de cï¿½pia
+    public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de cópia
     {
         if (c == null)
             throw new Exception("Parâmetro nulo");
